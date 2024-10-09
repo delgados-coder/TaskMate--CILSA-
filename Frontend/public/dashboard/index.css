@@ -1,0 +1,186 @@
+main{ 
+
+    background-color: #f5f5f5;
+}
+
+  asidE{
+    background-color: #f5f5f5 ;
+  }
+  :root {
+    --color-primary: #007bff;
+    --color-secondary: #adcbe3;
+    --color-background: #f7f5fa;
+    --color-sidebar: #eaeaea;
+    --color-card-bg: #eaeaea;
+    --color-card-text: #333;
+    --color-header-bg: #333;
+    --color-btn-hover: #007bff;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    background-color: var(--color-header-bg);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: var(--color-sidebar);
+    height: 100vh;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidebar h2 {
+    color: var(--color-card-text);
+    text-align: center;
+    
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+    color: var(--color-btn-hover);
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.task-summary, .btn-edit {
+    background-color: var(--color-background);
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-card {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: 10px;
+}
+
+.task-card h5 {
+    color: var(--color-card-text);
+}
+
+.btn-edit {
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-floating {
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 19px;
+    color: white;
+    border: none;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn:hover {
+    background-color: var(--color-btn-hover);
+    color: white;
+
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+       font-size: small;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .task-summary {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+
+    *{
+
+        font-size: small;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .task-card {
+        padding: 55px;
+
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .task-summary {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .btn-floating {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+.row>*{
+    padding: 0 !important;
+}
+
+div.card{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+a.nav-link{
+    text-align: center;
+
+}
+a.nav-link:hover{
+    background-color: #eaeaea;
+}
