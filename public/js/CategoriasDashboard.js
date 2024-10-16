@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
       descripcion: document.getElementById('descripcionCategoriaCrear').value
     };
 
-    try {
       const crearResponse = await fetch(``, {
         method: 'POST',
         headers: {
@@ -19,18 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify(nuevaCategoria)
       });
-
       if (crearResponse.ok) {
-        const categoriaCreada = await crearResponse.json();
-        console.log("Categoría creada:", categoriaCreada);
         modalCrear.querySelector('.btn-close').click();
         window.location.reload();
       } else {
         console.error("Error al crear la categoría:", crearResponse);
       }
-    } catch (error) {
-      console.error("Error al enviar la categoría:", error);
-    }
   };
 
   document.querySelectorAll('.btn-ver').forEach(button => {
