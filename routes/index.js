@@ -42,11 +42,10 @@ router.post('/registro', async function (req, res, next) {
     return res.json({ error: "La contraseña debe tener entre 8 y 12 caracteres y al menos un número" });
   }
   try {
-    let a = (await pg.query(`INSERT INTO users (username, email, "password") values ($1,$2,$3) RETURNING id;`, [req.body.user, req.body.email, req.body.password])).rows
-    console.log(a);
-
-    if (a != undefined) {
-      req.session.user = a[0].id
+    let nuevo = (await pg.query(`INSERT INTO users (username, email, "password") values ($1,$2,$3) RETURNING id;`, [req.body.user, req.body.email, req.body.password])).rows
+    
+    if (nuevo != undefined) {
+      req.session.user = nuevo[0].id
       res.json({ created: 'Creando usuario' })
     } else {
       res.json({ error: "problema de red, intente nuevamente" })
