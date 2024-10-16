@@ -14,6 +14,12 @@
                 <div class="navbar-nav ms-auto d-flex align-items-center">
                     <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     <a class="nav-link" href="/dashboard">Dashboard</a>
+                    {{#if loggedIn}}
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a class="nav-link active" href="/logout">Salir</a>
+
+                    </div>
+                    {{/if}}
                     {{#unless loggedIn }}
                     <div class="d-flex gap-2 flex-wrap">
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
@@ -39,12 +45,12 @@
                         <form>
                             <div class="mb-3">
                                 <label for="email-login" class="col-form-label">Correo electrónico:</label>
-                                <input type="email" class="form-control" id="email-login" value="micadiva1996"
+                                <input type="email" class="form-control" id="email-login"
                                     placeholder="Ingresa tu correo">
                             </div>
                             <div class="mb-3">
                                 <label for="password-login" class="col-form-label">Contraseña:</label>
-                                <input type="password" class="form-control" id="password-login" value="123"
+                                <input type="password" class="form-control" id="password-login"
                                     placeholder="Ingresa tu contraseña">
                             </div>
                             <div id="res-login"></div>
