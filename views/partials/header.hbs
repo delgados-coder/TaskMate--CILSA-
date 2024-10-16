@@ -1,0 +1,103 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-end">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" alt="logo de la empresa" width="100" height="60" class="img-fluid">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto d-flex align-items-center">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    {{#unless loggedIn }}
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#modalMdo">Ingresar</button>
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#modalFat">Registrarse</button>
+                    </div>
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+
+        {{#unless loggedIn }}
+
+        <div class="modal fade" id="modalMdo" tabindex="-1" aria-labelledby="modalMdoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalMdoLabel">Ingresar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email-login" class="col-form-label">Correo electrónico:</label>
+                                <input type="email" class="form-control" id="email-login" value="micadiva1996"
+                                    placeholder="Ingresa tu correo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password-login" class="col-form-label">Contraseña:</label>
+                                <input type="password" class="form-control" id="password-login" value="123"
+                                    placeholder="Ingresa tu contraseña">
+                            </div>
+                            <div id="res-login"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="sendLogin()">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalFat" tabindex="-1" aria-labelledby="modalFatLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalFatLabel">Registrarse</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="user-register" class="col-form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="user-register"
+                                    placeholder="Ingresa tu nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email-register" class="col-form-label">Correo electrónico:</label>
+                                <input type="email" class="form-control" id="email-register"
+                                    placeholder="Ingresa tu correo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password-register" class="col-form-label">Contraseña:</label>
+                                <input type="password" class="form-control" id="password-register"
+                                    placeholder="Crea una contraseña">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirm-password-register" class="col-form-label">Confirmar
+                                    contraseña:</label>
+                                <input type="password" class="form-control" id="confirm-password-register"
+                                    placeholder="Repite tu contraseña">
+                            </div>
+                            <div id="res-registro"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="sendRegistro()">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/unless}}
+    </nav>
+</header>

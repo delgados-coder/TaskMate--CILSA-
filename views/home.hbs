@@ -1,0 +1,176 @@
+<main class="flex-fill">
+    <div class="container">
+
+        <div class="row">
+            <p class="text-center display-1 text-dark fw-bold">TaskMate</p>
+            <p class="text-center fs-2 text-secondary fw-semibold">Tu vida organizada</p>
+        </div>
+
+        <div class="row justify-content-center mt-3 mb-4">
+            {{#unless loggedIn }}
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-secondary btn-lg">Regístrate gratis</button>
+            </div>
+            {{/unless}}
+        </div>
+    </div>
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/carrusel pagina 1.png" class=" w-100 carousel-img-small" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/carrusel pagina 2.png" class="d-block w-100 carousel-img-small" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/carrusel pagina 3.png" class="d-block w-100 carousel-img-small" alt="Slide 3">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</main>
+
+<aside class="flex-fill">
+    <div class="container">
+        <div class="row">
+
+            <p class="text-start fs-2 text-dark fw-bold mb-3">Nuestros Usuarios</p>
+            <p class="text-start fs-2 text-secondary fw-semibold mb-4">Comentarios</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato1.png" class="card-img-top" alt="Logo 1" style="width: 50px;">
+                        Ben Tennyson
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Taskmate es como tener un Omni Relog para mis tareas. Me permite organizarme y enfrentar
+                                cada reto
+                                con facilidad. ¡Nada se me escapa!"</p>
+                            <footer class="blockquote-footer">Ben Tennyson en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato2.png" class="card-img-top" alt="Logo 2" style="width: 50px;">
+                        Light Yagami
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Es la herramienta perfecta para mantener mi mente ordenada y mis objetivos claros. Con
+                                ella, cada
+                                tarea se convierte en un paso hacia la perfección que busco."</p>
+                            <footer class="blockquote-footer">Light Yagami en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato3.png" class="card-img-top" alt="Logo 3" style="width: 50px;">
+                        Karol Sevilla
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Es como mi mejor amiga en el día a día. Me ayuda a brillar organizando mis tareas y
+                                manteniéndome en
+                                el camino hacia mis sueños. ¡Es imprescindible!"</p>
+                            <footer class="blockquote-footer">Karol Sevilla en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato4.png" class="card-img-top" alt="Logo 4" style="width: 50px;">
+                        Adrian Petriw
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            es una herramienta increíble que transforma la manera en que gestiono mis tareas. Su
+                            eficiencia y
+                            facilidad de uso son lo que siempre he buscado para alcanzar mis objetivos."</p>
+                            <footer class="blockquote-footer">Adrian Petriw en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato5.png" class="card-img-top" alt="Logo 5" style="width: 50px;">
+                        Margot Queen
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Es mi cómplice perfecto. Con ella, puedo organizar mi caos y hacer que cada día sea una
+                                aventura. ¡Es
+                                simplemente fantástica!"</p>
+                            <footer class="blockquote-footer">Margot Robbie en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="/images/retrato6.png" class="card-img-top" alt="Logo 6" style="width: 50px;">
+                        Jared Leto
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Es como un buen chiste: me mantiene en el camino correcto mientras me divierto.
+                                ¡Organizar mis
+                                locuras nunca había sido tan divertido!"</p>
+                            <footer class="blockquote-footer">Jared Leto en <cite title="Source Title">evaluación de
+                                    TASKMATE</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
