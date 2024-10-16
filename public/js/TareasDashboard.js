@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (crearResponse.ok) {
-        const tareaCreada = await crearResponse.json();
         modalCrear.querySelector('.btn-close').click();
         window.location.reload();
       } else {
