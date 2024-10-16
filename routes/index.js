@@ -20,8 +20,9 @@ router.post('/login', async function (req, res, next) {
     if (user.length == 1) {
       req.session.user = user[0].id
       return res.json({ loggedIn: "iniciando sesión" })
+    }else{  
+      return res.status(404).json({ error: "usuario no encontrado" })
     }
-    return res.status(404).json({ error: "usuario no encontrado" })
   } catch (err) {
     console.log(err);
   }
