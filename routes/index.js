@@ -32,13 +32,17 @@ router.post('/registro', async function (req, res, next) {
   console.log(req.body);
   
   const email_check = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
-  const pass_check = /^(?=.*\d)[A-Za-z\d]{8,12}$/;
-
+  const pass_check = /^(?=.*\d)[A-Za-z\d\W]{8,12}/
+  console.log(pass_check);
+  
   if (!email_check.test(req.body.email)) { //
+    
     return res.json({ error: "El email no es válido" });
   }
 
   if (!pass_check.test(req.body.password)) {
+    console.log('a');
+    
     return res.json({ error: "La contraseña debe tener entre 8 y 12 caracteres y al menos un número" });
   }
   try {
