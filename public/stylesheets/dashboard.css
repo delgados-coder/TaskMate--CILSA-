@@ -89,13 +89,13 @@ body {
 .task-card h5 {
     color: var(--color-card-text);
 }
-/* .botonera {
+ .botonera {
     display: flex;
     padding: 10px;
     text-align: center;
     align-self: center;
     justify-content: space-between;
-} */
+} 
 .btn-edit {
     background-color: var(--color-secondary);
     border: none;
