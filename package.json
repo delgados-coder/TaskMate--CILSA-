@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "node --watch ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "node --watch ./bin/www"
   },
   "dependencies": {
     "connect-pg-simple": "^10.0.0",

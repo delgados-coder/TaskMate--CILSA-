@@ -20,7 +20,7 @@ function sendLogin() {
             } else {
                 document.getElementById('res-login').innerHTML = `<p class="text-success">${data.loggedIn}</p>`
                 setTimeout(() => {
-                    return window.location.href = '/dashboard'
+                    return window.location.href = '/dashboard/tareas/'
                 }, 2000);
             }
         })

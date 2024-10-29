@@ -3,7 +3,13 @@ var router = express.Router();
 var pg = require('../db/db.js')
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('home', { css: 'home' })
+  if (req.session.user >0) {
+    loggedIn = true
+  }
+  else{
+    loggedIn = false
+  }
+  res.render('home', { css: 'home', loggedIn })
 })
 router.get('/logout', function (req, res, next) {
   req.session.destroy()

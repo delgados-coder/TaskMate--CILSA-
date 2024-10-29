@@ -6,16 +6,31 @@ router.get('/', async function (req, res, next) {
   try {
     const getList = (await pg.query('SELECT id, titulo, descripcion, estado, created_at, updated_at, id_categoria, id_lista FROM tareas where id_user = $1;', [req.session.user])).rows
     count = getList.length
-    
-    res.render('dashboard', { css: 'dashboard', loggedIn: true, tareasGrid: true, tareas: getList, totalCount: count });
+    res.render('dashboard', { css: 'dashboard', loggedIn: true, tareasGrid: true, tareas: getList, todos: true,  totalCount: count });
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.get('/completadas', async function (req, res, next) {
+  try {
+    const getList = (await pg.query('SELECT id, titulo, descripcion, estado, created_at, updated_at, id_categoria, id_lista FROM tareas where id_user = $1 AND estado = true;', [req.session.user])).rows
+    count = getList.length
+    res.render('dashboard', { css: 'dashboard', loggedIn: true, tareasGrid: true, tareas: getList, completadas:true, totalCount: count });
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.get('/pendientes', async function (req, res, next) {
+  try {
+    const getList = (await pg.query('SELECT id, titulo, descripcion, estado, created_at, updated_at, id_categoria, id_lista FROM tareas where id_user = $1 AND estado = false;', [req.session.user])).rows
+    count = getList.length
+    res.render('dashboard', { css: 'dashboard', loggedIn: true, tareasGrid: true, tareas: getList, pendientes:true, totalCount: count });
   } catch (error) {
     console.log(error);
   }
 });
 
 router.post('/', async function (req, res, next) {
-  console.log(req.body);
-  
   try {
     (await pg.query(`INSERT INTO tareas (titulo, descripcion, estado, created_at, updated_at, id_categoria, id_lista, id_user) VALUES($1, $2, $3, now(), now(), $4, $5, $6) RETURNING id;`, 
       [String(req.body.titulo), String(req.body.descripcion), false, Number(req.body.id_categoria), Number(req.body.id_lista), req.session.user ]))
@@ -35,8 +50,6 @@ router.get('/id', async function (req, res, next) {
 })
 
 router.put('/id', async function (req, res, next) {
-  console.log(req.body);
-  
   try {
     let actualizar = (await pg.query(`UPDATE tareas SET titulo= $1, descripcion= $2, created_at= now(), updated_at = now(), id_categoria= $3, id_lista= $4 WHERE id= $5;`,
       [String(req.body.titulo), String(req.body.descripcion), Number(req.body.id_categoria), Number(req.body.id_lista), Number(req.query.id) ])).rows
@@ -48,8 +61,6 @@ router.put('/id', async function (req, res, next) {
 })
 
 router.put('/estado', async function (req, res, next) {
-  console.log(req.body);
-  
   try {
     let actualizar = (await pg.query(`UPDATE tareas SET estado = $1 WHERE id= $2;`,
       [Boolean(req.body.estado),Number(req.query.id) ])).rows

@@ -1,57 +1,52 @@
-<div class="col-10 main-content">
-    <div class="task-summary text-center mb-4">
-        <span>Total: <strong>{{totalCount}}</strong></span>
-        |
-        <span>En progreso: <strong>{{pendingCount}}</strong></span>
-        |
-        <span>Terminadas: <strong>{{completeCount}}</strong></span>
-    </div>
-    <h2>Mis tareas</h2>
-    <div class="container">
-        <button class="btn btn-light m-1">Inbox</button>
-        <button class="btn btn-primary m-1">Pendientes</button>
-        <button class="btn btn-light m-1">En espera</button>
-        <button class="btn btn-light m-1">Completas</button>
-        <button class="btn btn-light m-1">Archivadas</button>
-    </div>
-
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card text-center mb-4" style="cursor: pointer;" data-bs-toggle="modal"
-                data-bs-target="#modalCrear">
-                <div class="card-body">
-                    <h5 class="card-title">AGREGAR</h5>
-                </div>
+<div class="container mx-1">
+    <div class="col">
+        <div class="task-summary text-center mb-4">
+            <span>Total: <strong>{{totalCount}}</strong></span>
+            |
+            <span>En progreso: <strong>{{pendingCount}}</strong></span>
+            |
+            <span>Terminadas: <strong>{{completeCount}}</strong></span>
+        </div>
+        <h2>Mis tareas</h2>
+        <div class="row">
+            <div class="col">
+                <a href="/dashboard/tareas"><button class="btn btn-{{#if todos}}primary{{else}}light {{/if}} m-1">Todos</button></a>
+                <a href="/dashboard/tareas/pendientes"><button class="btn btn-{{#if pendientes}}primary{{else}}light {{/if}} m-1">Pendientes</button></a>
+                <a href="/dashboard/tareas/completadas"><button class="btn btn-{{#if completadas}}primary{{else}}light {{/if}} m-1">Completas</button></a>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button class="btn btn-primary " style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalCrear"> AGREGAR </button>
             </div>
         </div>
-
-        {{#each tareas}}
-        <div class="col-md-3">
-            <div class="card card-grid mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">{{titulo}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            {{#each tareas}}
+            <div class="col">
+                <div class="card card-grid mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{titulo}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            {{#if estado}}
+                            Completa
+                            {{else}}
+                            Pendiente
+                            {{/if}}
+                        </h6>
+                        <p class="card-text">{{descripcion}}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-evenly p-2 text-center align-middle ">
                         {{#if estado}}
-                        Completa
+                        <button type="button" class="btn btn-danger btn-pendiente" data-id="{{id}}">&#10006;</button>
                         {{else}}
-                        Pendiente
+                        <button type="button" class="btn btn-success btn-completado" data-id="{{id}}">✔</button>
                         {{/if}}
-                    </h6>
-                    <p class="card-text">{{descripcion}}</p>
-                </div>
-                <div class="card-footer d-flex justify-content-evenly p-2 text-center align-middle ">
-                    {{#if estado}}
-                    <button type="button"class="btn btn-danger btn-pendiente" data-id="{{id}}">&#10006;</button>
-                    {{else}}
-                    <button type="button"class="btn btn-success btn-completado" data-id="{{id}}">✔</button>
-                    {{/if}}
-                    <button type="button" class="btn btn-secondary btn-ver" data-id="{{id}}">Ver</button>
-                    <button type="button"class= " btn btn-dark btn-editar" data-id="{{id}}">Editar</button>
-                    <button type="button" class= " btn btn-danger btn-eliminar" data-id="{{id}}">Eliminar</button>
+                        <button type="button" class="btn btn-secondary btn-ver" data-id="{{id}}">Ver</button>
+                        <button type="button" class=" btn btn-dark btn-editar" data-id="{{id}}">Editar</button>
+                        <button type="button" class=" btn btn-danger btn-eliminar" data-id="{{id}}">Eliminar</button>
+                    </div>
                 </div>
             </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
 </div>
 <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="modalCrearLabel" aria-hidden="true">

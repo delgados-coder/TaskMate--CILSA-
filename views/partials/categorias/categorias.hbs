@@ -1,110 +1,97 @@
-  <div class="container-fluid">
-    <div class="row flex-nowrap">
-
-
-      <div class="col py-3">
-        <div class="col-10 main-content">
-          <div class="task-summary text-center mb-4">
-            <span>Total Categorías: <strong>{{totalCount}}</strong></span>
-          </div>
-
-          <h2>Mis Categorías</h2>
-
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card text-center mb-4" style="cursor: pointer;" data-bs-toggle="modal"
-                data-bs-target="#modalCrear">
-                <div class="card-body">
-                  <h5 class="card-title">AGREGAR</h5>
-                </div>
-              </div>
+<div class="container px-1">
+  <div class="row flex-nowrap">
+    <div class="col">
+      <div class="task-summary text-center mb-4 d-flex">
+        <div class="col">
+          <span>Total Categorías: <strong>{{totalCount}}</strong></span>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary " style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalCrear">AGREGAR</button>
+        </div>
+      </div>
+      <h2>Mis Categorías</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        {{#each categorias}}
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{nombre_categoria}}</h5>
+              <p class="card-text">{{descripcion}}</p>
+              <button type="button" class="btn btn-secondary btn-ver" data-id="{{id}}">Ver</button>
+              <button type="button" class="btn btn-dark btn-editar" data-id="{{id}}">Editar</button>
+              <button type="button" class="btn btn-danger btn-eliminar" data-id="{{id}}">Eliminar</button>
             </div>
-
-            {{#each categorias}}
-            <div class="col-md-3">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h5 class="card-title">{{nombre_categoria}}</h5>
-                  <p class="card-text">{{descripcion}}</p>
-                  <button type="button" class="btn btn-secondary btn-ver" data-id="{{id}}">Ver</button>
-                  <button type="button" class="btn btn-dark btn-editar" data-id="{{id}}">Editar</button>
-                  <button type="button" class="btn btn-danger btn-eliminar" data-id="{{id}}">Eliminar</button>
-                </div>
-              </div>
-            </div>
-            {{/each}}
-
-
-
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="modalCrearLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalCrearLabel">Crear Nueva Categoría</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="formCrear">
-            <div class="mb-3">
-              <label for="nombreCategoriaCrear" class="form-label">Nombre de la Categoría</label>
-              <input type="text" class="form-control" id="nombreCategoriaCrear" required />
-            </div>
-            <div class="mb-3">
-              <label for="descripcionCategoriaCrear" class="form-label">Descripción</label>
-              <textarea class="form-control" id="descripcionCategoriaCrear" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Crear categoría</button>
-          </form>
-        </div>
+<div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="modalCrearLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCrearLabel">Crear Nueva Categoría</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formCrear">
+          <div class="mb-3">
+            <label for="nombreCategoriaCrear" class="form-label">Nombre de la Categoría</label>
+            <input type="text" class="form-control" id="nombreCategoriaCrear" required />
+          </div>
+          <div class="mb-3">
+            <label for="descripcionCategoriaCrear" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcionCategoriaCrear" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear categoría</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
-  <div id="modalVer" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Detalles de la Categoría</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h5 id="verNombreCategoria"></h5>
-          <p><strong>Descripción:</strong> <span id="verDescripcionCategoria"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+<div id="modalVer" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalles de la Categoría</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 id="verNombreCategoria"></h5>
+        <p><strong>Descripción:</strong> <span id="verDescripcionCategoria"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalEditarLabel">Editar Categoría</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="formEditar">
-            <div class="mb-3">
-              <label for="editNombreCategoria" class="form-label">Nombre de la Categoría</label>
-              <input type="text" class="form-control" id="editNombreCategoria" required />
-            </div>
-            <div class="mb-3">
-              <label for="editDescripcionCategoria" class="form-label">Descripción</label>
-              <textarea class="form-control" id="editDescripcionCategoria" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
-          </form>
-        </div>
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditarLabel">Editar Categoría</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formEditar">
+          <div class="mb-3">
+            <label for="editNombreCategoria" class="form-label">Nombre de la Categoría</label>
+            <input type="text" class="form-control" id="editNombreCategoria" required />
+          </div>
+          <div class="mb-3">
+            <label for="editDescripcionCategoria" class="form-label">Descripción</label>
+            <textarea class="form-control" id="editDescripcionCategoria" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
       </div>
     </div>
   </div>
-  <script src="/js/CategoriasDashboard.js"></script>
+</div>
+<script src="/js/CategoriasDashboard.js"></script>

@@ -9,7 +9,6 @@ var { templateEngine } = require('./lib/templateEngine')
 
 var session = require('express-session')
 var indexRouter = require('./routes/index.js');
-var Dashboard = require('./routes/dashboard.js');
 var categorias = require('./routes/categorias.js');
 var tareas = require('./routes/tareas.js');
 var listas = require('./routes/listas.js');
@@ -44,7 +43,6 @@ function isLoggedIn(req,res,next){
   }
 }
 app.use('/', indexRouter);
-app.use('/dashboard', isLoggedIn, Dashboard);
 app.use('/dashboard/categorias', isLoggedIn, categorias);
 app.use('/dashboard/tareas', isLoggedIn, tareas);
 app.use('/dashboard/listas', isLoggedIn, listas);
