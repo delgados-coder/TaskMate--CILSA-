@@ -38,7 +38,7 @@ Las reuniones de revisión de progreso se realizan semanalmente los lunes.
 ### Sprint 3: Desarrollo del Frontend
 - **Objetivo**: Crear la interfaz gráfica e integrarla con el backend.
 - **Tareas**:
-  - Implementación del frontend con React.
+  - Implementación del frontend con Handlebars.
   - Desarrollo de componentes de la interfaz: lista de tareas, botones, formularios.
   - Integración con la API.
   - Testing y pruebas de usabilidad.
