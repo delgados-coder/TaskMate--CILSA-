@@ -21,7 +21,6 @@ Las reuniones de revisión de progreso se realizan semanalmente los lunes.
 - **Objetivo**: Establecer las bases del proyecto, realizar el prototipado y preparar la infraestructura técnica.
 - **Tareas**:
   - Prototipado de la interfaz de usuario utilizando Figma.
-  - Definición del flujo de usuario y estructura general en Miro.
   - Creación de repositorios en GitHub para control de versiones.
   - Diagramación y modelado de la base de datos.
 
