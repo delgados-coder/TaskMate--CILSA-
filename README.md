@@ -6,11 +6,11 @@
 
 ![](header.png)
 
-##DOCUMENTACIÒN
+## Documentaciòn:
 Documentacion presentada en el documento: Documentacion.md
 
 
-## Cómo Usar
+## Cómo Usar:
 
 Para clonar y ejecutar esta aplicación, necesitas tener instalados **Git** y **Node.js**:
 
