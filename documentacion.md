@@ -120,9 +120,8 @@ El MVP deberá incluir las siguientes funcionalidades:
 
 A continuación, se muestran los diagramas que representan el modelo entidad-relación y su estructura en la base de datos.
 
-![Diagrama Entidad-Atributos](diagrama1.png)
-![Diagrama Estructura Ent-Rel](diagrama2.png)
-![Diagrama Relaciones](diagrama3.png)
+![Modelo ER Base de Datos](https://github.com/user-attachments/assets/c1229675-ee3d-4d82-9073-28d92d3d6865)
+
 
 ## Elección del Motor de Base de Datos
 
