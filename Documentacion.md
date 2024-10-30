@@ -207,7 +207,7 @@ TASKMATE--CILSA-
 ├── app.js                      # Archivo principal de la aplicación
 ├── package-lock.json           # Bloqueo de dependencias del proyecto
 └── package.json                # Información del proyecto y dependencias
-
+///////
 
 
 ### Desarrollado por:  
