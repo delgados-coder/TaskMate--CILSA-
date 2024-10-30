@@ -6,7 +6,7 @@
 
 ![](header.png)
 
-## Documentaciòn:
+## Documentación:
 Documentacion presentada en el documento: Documentacion.md
 
 
