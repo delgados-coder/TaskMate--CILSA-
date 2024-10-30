@@ -135,6 +135,9 @@ Este proyecto utiliza:
 - [Express.js](https://expressjs.com/)
 - [Handlebars](https://handlebarsjs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- CSS
+- HTML
 
 ## Estructura del Proyecto
 
@@ -199,7 +202,7 @@ TASKMATE--CILSA-
 │   ├── error.hbs
 │   └── home.hbs
 │
-├── .env                        # Variables de entorno (oculto por seguridad)
+├── .env                        # Variables de entorno 
 ├── .gitignore                  # Archivos que Git debe ignorar
 ├── README.md                   # Documentación del proyecto
 ├── app.js                      # Archivo principal de la aplicación
