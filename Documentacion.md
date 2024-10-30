@@ -1,10 +1,6 @@
 # Taskmate - CILSA
 **Tu vida organizada**
 
-**Taskmate** es una herramienta de gestión de tareas diseñada para mejorar la productividad, permitiendo organizar, priorizar y hacer seguimiento de proyectos tanto para individuos como para equipos.
-
-![](header.png)
-
 ## Organización del Proyecto
 
 Para coordinar nuestro trabajo y mantener una comunicación fluida, utilizamos:
@@ -211,25 +207,7 @@ TASKMATE--CILSA-
 ├── app.js                      # Archivo principal de la aplicación
 ├── package-lock.json           # Bloqueo de dependencias del proyecto
 └── package.json                # Información del proyecto y dependencias
-```
 
-## Cómo Usar
-
-Para clonar y ejecutar esta aplicación, necesitas tener instalados **Git** y **Node.js**:
-
-### TASKMATE Setup:
-```bash
-$ git clone https://github.com/TU_USUARIO/taskmate-cilsa
-$ cd TaskMate--CILSA-
-$ npm install
-$ npm start
-```
-
-### Abrir la aplicación
-Entra a esta URL en el navegador:
-http://127.0.0.1:3000/
-
----
 
 
 ### Desarrollado por:  
@@ -237,3 +215,5 @@ http://127.0.0.1:3000/
 > **Santiago Delgado** • [GitHub](https://github.com/delgados-coder)       
 > **Laura Yachelini** • [GitHub](https://github.com/LauYache)  
 > **Roxana Marchetto** • [GitHub](https://github.com/roxymarchetto)  
+
+
