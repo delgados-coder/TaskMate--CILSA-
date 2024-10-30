@@ -35,7 +35,10 @@ Las reuniones de revisión de progreso se realizan semanalmente los lunes.
 ### Sprint 3: Desarrollo del Frontend
 - **Objetivo**: Crear la interfaz gráfica e integrarla con el backend.
 - **Tareas**:
+-  developer
   - Implementación del frontend utilizando **Handlebars** como motor de plantillas.
+  - Implementación del frontend con Handlebars.
+- main
   - Desarrollo de componentes de la interfaz: lista de tareas, botones, formularios.
   - Integración con la API.
   - Testing y pruebas de usabilidad.
