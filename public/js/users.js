@@ -55,7 +55,7 @@ function sendRegistro() {
             } else {
                 document.getElementById('res-registro').innerHTML = `<p class="text-success">${data.created}</p>`
                 setTimeout(() => {
-                    return window.location.href = '/dashboard'
+                    return window.location.href = '/dashboard/tareas'
                 }, 2000);
             }
         })
