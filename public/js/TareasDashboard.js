@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const crearResponse = await fetch(``, {
+      const crearResponse = await fetch(`/dashboard/tareas/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(nuevaTarea)
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await cargarCategoriasYListas(document.getElementById('modalEditar'));
 
       try {
-        const response = await fetch(`id?id=${tareaId}`);
+        const response = await fetch(`/dashboard/tareas/id?id=${tareaId}`);
         const tarea = await response.json();
         console.log(tarea);
         
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (confirm("¿Estás seguro de que quieres eliminar esta tarea?")) {
         try {
-          await fetch(`id?id=${tareaId}`, { method: 'DELETE' });
+          await fetch(`/dashboard/tareas/id?id=${tareaId}`, { method: 'DELETE' });
           window.location.reload();
         } catch (error) {
           console.error('Error al eliminar la tarea:', error);
