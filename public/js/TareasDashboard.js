@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tareaId = button.dataset.id;
 
       try {
-        await fetch(`estado?id=${tareaId}`, {
+        await fetch(`/dashboard/tareas/estado?id=${tareaId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ estado: true })
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tareaId = button.dataset.id;
 
       try {
-        await fetch(`estado?id=${tareaId}`, {
+        await fetch(`/dashboard/tareas/estado?id=${tareaId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ estado: false })
